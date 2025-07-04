@@ -1,6 +1,7 @@
 import { request, success, fail } from "../reducers/productReducers"
 import {productCreateRequest,productCreateSuccess,productCreateFail,productUpdateFail,productUpdateRequest,productUpdateSuccess} from '../reducers/productScreenReducer'
-import axios from "axios"
+import axios from '../api/axiosConfig';
+
  
 export const listProducts = (keyword = '' , pageNumber = '') => async (dispatch) => {
   try {
