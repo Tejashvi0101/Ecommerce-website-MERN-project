@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from '../api/axiosConfig'
 import { request, success, fail, requestDetails, successDetails, failDetails } from '../reducers/OrderReducers'
 
 

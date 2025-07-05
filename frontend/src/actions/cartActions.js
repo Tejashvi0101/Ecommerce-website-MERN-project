@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from '../api/axiosConfig'
 import { Add,Remove ,saveAddress,CartSavePaymentMethod} from "../reducers/CartReducers"
 
 

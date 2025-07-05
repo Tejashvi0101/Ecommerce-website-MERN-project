@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from '../api/axiosConfig'
 import { success,request,fail,logout,register,failRegister,failUserDetail,userDetail, userListFail, userListRequest, userListSuccess } from "../reducers/userReducer"
 import {userDetailReset} from '../reducers/userReducer'
 

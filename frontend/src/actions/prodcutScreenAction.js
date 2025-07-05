@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from '../api/axiosConfig'
 import { request, success, fail } from "../reducers/productScreenReducer"
 
 
