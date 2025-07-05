@@ -25,7 +25,15 @@ const Product = (props) => {
     
     </Card.Text>
 
-     <Card.Text as='h3'>${props.product.price}</Card.Text>
+    <Card.Text as='h3'>${props.product.price}</Card.Text>
+     <Card.Text as='div' className='mt-2'>
+          {props.product.countInStock > 0 ? (
+            <span className='text-success'>In Stock</span>
+          ) : (
+            <span className='text-danger'>Out of Stock</span>
+          )}
+        </Card.Text>
+
 
          </Card.Body>
 
