@@ -28,11 +28,11 @@ const PlaceOrderScreen = () => {
   )
   const shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
   const taxPrice = addDecimals(Number((0.15 * itemsPrice).toFixed(2)))
-  const totalPrice = (
-    Number(itemsPrice) +
-    Number(cart.shippingPrice) +
-    Number(cart.taxPrice)
-  ).toFixed(2)
+  const totalPrice    = (
+  Number(itemsPrice) +
+  Number(shippingPrice) +
+  Number(taxPrice)
+).toFixed(2)
 
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate

@@ -3,6 +3,7 @@ import asyncHandler from 'express-async-handler'
 import User from '../models/usermodel.js'
 
 export const protect = asyncHandler(async( req,res ,next)=>{
+console.log('⏳ Auth header received:', req.headers.authorization);
 
 let token
 
