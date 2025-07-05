@@ -7,6 +7,8 @@ export const createOrder = (order) => async (dispatch,getState) => {
       dispatch(request())
 
       const {userLogin : {userInfo},} = getState()
+       console.log('createOrder → userInfo.token:', userInfo?.token);
+       console.log('createOrder → order payload:', order);
 
       const config = {
         headers : {

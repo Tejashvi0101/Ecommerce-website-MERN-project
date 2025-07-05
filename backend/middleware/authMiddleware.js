@@ -4,6 +4,7 @@ import User from '../models/usermodel.js'
 
 export const protect = asyncHandler(async( req,res ,next)=>{
 console.log('⏳ Auth header received:', req.headers.authorization);
+console.log('🛡  protect middleware:', req.method, req.originalUrl);
 
 let token
 
