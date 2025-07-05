@@ -55,7 +55,7 @@ export const updateProduct = asyncHandler(async (req,res) =>{
       product.image = image 
       product.brand = brand 
       product.category = category 
-      product.countInStcok = countInStock 
+      product.countInStock = countInStock 
 
       const updateProduct = await product.save()
       res.json(updateProduct)

@@ -51,7 +51,7 @@ const ProductEditScreen = () => {
           setImage(product.image)
           setBrand(product.brand)
           setCategory(product.category)
-          setCountInStock(product.countInStcok)
+          setCountInStock(product.countInStock)
           setDescription(product.description)
         }
     }

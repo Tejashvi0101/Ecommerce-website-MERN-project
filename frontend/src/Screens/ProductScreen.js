@@ -76,11 +76,11 @@ navigate(`/cart/${prams.id}?qty=${qty}`)
           <Col>
             status: 
           </Col>
-          <Col>{product.countInStcok > 0 ? 'In Stock' : 'Out of Stock' }</Col>
+          <Col>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock' }</Col>
         </Row>
       </ListGroupItem>
 
-      {product.countInStcok>0 && (
+      {product.countInStock>0 && (
       
           <ListGroupItem>
             <Row>
@@ -88,7 +88,7 @@ navigate(`/cart/${prams.id}?qty=${qty}`)
               <Col>
                  <Form.Control as='select' value={qty} onChange={(e)=>
                  setQty(e.target.value)}>
-                  {[...Array(product.countInStcok).keys()].map((x)=>(
+                  {[...Array(product.countInStock).keys()].map((x)=>(
                     <option key={x+1} value={x+1}>
                     {x+1}
                     </option>
@@ -101,7 +101,7 @@ navigate(`/cart/${prams.id}?qty=${qty}`)
       )}
 
       <ListGroupItem>
-        <Button onClick={addToCartHandler} className='w-100' type='button' disabled={product.countInStcok===0}  > Add to Cart</Button>
+        <Button onClick={addToCartHandler} className='w-100' type='button' disabled={product.countInStock===0}  > Add to Cart</Button>
       </ListGroupItem>
     </ListGroup>
   </Col>
