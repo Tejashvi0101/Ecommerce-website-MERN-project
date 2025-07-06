@@ -7,6 +7,9 @@ import Order from '../models/ordermodel.js'
 //Potected
 
 const addOrderItems = asyncHandler( async (req,res) =>{
+    console.log('▶️ addOrderItems hit');
+    console.log('▶️ req.user:', req.user);
+    console.log('▶️ req.body:', req.body);
     const {orderItems , shippingAddress,paymentMethod,itemsPrice,taxPrice,shippingPrice,totalPrice} = req.body
 
     if(orderItems && orderItems.length === 0 ){
@@ -15,6 +18,8 @@ const addOrderItems = asyncHandler( async (req,res) =>{
         return
     } else {
         const order = new Order ({
+             
+
              orderItems,
              user : req.user._id,
              shippingAddress,
