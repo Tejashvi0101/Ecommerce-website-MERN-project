@@ -59,7 +59,7 @@ const checkOutHandler =() =>{
                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
                             </Col>
                             <Col md={2}>${item.price}</Col>
-                            <Col md={2}><Form.Control as='select' value={item.Qty} onChange={(e)=>
+                            <Col md={2}><Form.Control as='select' value={item.qty} onChange={(e)=>
                              dispatch(addToCart(item.product,Number(e.target.value)))}>
                              {[...Array(item.countInStock).keys()].map((x)=>(
                             <option key={x+1} value={x+1}>
@@ -84,9 +84,9 @@ const checkOutHandler =() =>{
              <ListGroup variant='flush'>
                 <ListGroupItem>
                     <h2>
-                        Subtotal ({cartItems.reduce((acc,item)=> acc + item.Qty,0)}) items
+                        Subtotal ({cartItems.reduce((acc,item)=> acc + item.qty,0)}) items
                     </h2>
-                    ${cartItems.reduce((acc,item)=>acc+ item.Qty*item.price,0).toFixed(2)}
+                    ${cartItems.reduce((acc,item)=>acc+ item.qty*item.price,0).toFixed(2)}
                 </ListGroupItem>
                 <ListGroupItem>
                     <Button className='w-100' disabled={cartItems.length===0} onClick={checkOutHandler} >Proceed to Checkout</Button>

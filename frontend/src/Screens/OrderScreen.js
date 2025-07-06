@@ -28,7 +28,7 @@ const OrderScreen = () => {
   let itemsPrice
   if(!loading){ 
          itemsPrice = addDecimals(
-        order.orderItems.reduce((acc, item) => acc + item.price * item.Qty, 0)
+        order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
       )
   }
 
@@ -121,7 +121,7 @@ if(!order){
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.Qty} x ${item.price} = ${item.Qty * item.price}
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>

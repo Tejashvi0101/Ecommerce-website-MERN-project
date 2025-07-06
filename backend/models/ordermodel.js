@@ -14,7 +14,7 @@ ref:'User'
 orderItems:[
 {
     name:{type:String , require:true},
-    Qty:{type:Number , require:true},
+    qty:{type:Number , require:true},
     image:{type:String , require:true},
     price:{type:Number , require:true},
     product:{type:mongoose.Schema.Types.ObjectId , require:true , ref:'Product'},

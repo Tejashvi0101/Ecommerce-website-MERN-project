@@ -22,12 +22,14 @@ const PlaceOrderScreen = () => {
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2)
   }
+  console.log("Cart Items:", cart.cartItems)
 
   const itemsPrice = addDecimals(
-    cart.cartItems.reduce((acc, item) => acc + item.price * item.Qty, 0)
+    cart.cartItems.reduce((acc, item) => acc + Number(item.price) * Number(item.qty), 0)
   )
-  const shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100)
-  const taxPrice = addDecimals(Number((0.15 * itemsPrice).toFixed(2)))
+  const shippingPrice = addDecimals(Number(itemsPrice) > 100 ? 0 : 100)
+
+  const taxPrice = addDecimals(Number((0.15 * Number(itemsPrice)).toFixed(2)))
   const totalPrice    = (
   Number(itemsPrice) +
   Number(shippingPrice) +
@@ -52,7 +54,7 @@ const PlaceOrderScreen = () => {
         orderItems: cart.cartItems,
         shippingAddress: cart.shippingAddress,
         paymentMethod: cart.paymentMethod,
-        itemsPrice: cart.itemsPrice,
+        itemsPrice: itemsPrice,
         shippingPrice: shippingPrice,
         taxPrice: taxPrice,
         totalPrice: totalPrice,
@@ -105,7 +107,8 @@ const PlaceOrderScreen = () => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.Qty} x ${item.price} = ${item.Qty * item.price}
+                          {item.qty} x ${item.price} = ${(Number(item.qty) * Number(item.price)).toFixed(2)}
+
                         </Col>
                       </Row>
                     </ListGroup.Item>

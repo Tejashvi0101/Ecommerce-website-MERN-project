@@ -10,7 +10,7 @@ import { ProductDetails } from '../actions/prodcutScreenAction'
 
 const ProductScreen = (props) => {
 
-const [qty,setQty] = useState(1);
+const [qty,setqty] = useState(1);
 
 
 const prams =useParams()
@@ -84,10 +84,10 @@ navigate(`/cart/${prams.id}?qty=${qty}`)
       
           <ListGroupItem>
             <Row>
-              <Col>Qty</Col>
+              <Col>qty</Col>
               <Col>
                  <Form.Control as='select' value={qty} onChange={(e)=>
-                 setQty(e.target.value)}>
+                 setqty(e.target.value)}>
                   {[...Array(product.countInStock).keys()].map((x)=>(
                     <option key={x+1} value={x+1}>
                     {x+1}
