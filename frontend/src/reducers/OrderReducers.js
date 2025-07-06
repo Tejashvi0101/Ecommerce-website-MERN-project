@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 export const orderSlice = createSlice({
     name: 'order',
     initialState: { },
@@ -12,7 +13,11 @@ export const orderSlice = createSlice({
       },
       fail: (state, action) => {
         return { loading: false, error: action.payload }
-      }
+      },
+      reset: () => {
+        return {};
+      },
+      
     }
   })
   
@@ -36,7 +41,7 @@ export const orderSlice = createSlice({
   
   
   
-  export const {request, success, fail} = orderSlice.actions
+  export const {request, success, fail, reset} = orderSlice.actions
   export const {requestDetails, successDetails, failDetails} = orderDetailsSlice.actions
    
   export default orderSlice

@@ -6,7 +6,7 @@ import Message from '../components/Message'
 import CheckoutSteps from '../components/CheckoutSteps'
 import {useNavigate} from 'react-router-dom'
 import { createOrder } from '../actions/orderActions'
-
+import { reset } from '../reducers/OrderReducers'
 
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch()
@@ -42,6 +42,7 @@ const PlaceOrderScreen = () => {
   useEffect(() => {
     if (success) {
       navigate(`/order/${order._id}`)
+      dispatch(reset())
       // dispatch({ type: USER_DETAILS_RESET })
       // dispatch({ type: ORDER_CREATE_RESET })
     }
