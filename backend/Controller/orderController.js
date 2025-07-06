@@ -7,7 +7,7 @@ import Order from '../models/ordermodel.js'
 //Potected
 
 const addOrderItems = asyncHandler( async (req,res) =>{
-    const {orderItems , shippingAddress,paymentMethod,itmesPrice,taxPrice,shippingPrice,totalPrice} = req.body
+    const {orderItems , shippingAddress,paymentMethod,itemsPrice,taxPrice,shippingPrice,totalPrice} = req.body
 
     if(orderItems && orderItems.length === 0 ){
         res.status(400)
