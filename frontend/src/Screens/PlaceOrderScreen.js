@@ -24,17 +24,20 @@ const PlaceOrderScreen = () => {
   }
   console.log("Cart Items:", cart.cartItems)
 
-  const itemsPrice = addDecimals(
-    cart.cartItems.reduce((acc, item) => acc + Number(item.price) * Number(item.qty), 0)
-  )
-  const shippingPrice = addDecimals(Number(itemsPrice) > 100 ? 0 : 100)
+  const itemsPrice = Number(
+  cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+).toFixed(2)
 
-  const taxPrice = addDecimals(Number((0.15 * Number(itemsPrice)).toFixed(2)))
-  const totalPrice    = (
-  Number(itemsPrice) +
-  Number(shippingPrice) +
+const shippingPrice = Number(itemsPrice) > 100 ? 0 : 100
+
+const taxPrice = (0.15 * Number(itemsPrice)).toFixed(2)
+
+const totalPrice = (
+  Number(itemsPrice) + 
+  Number(shippingPrice) + 
   Number(taxPrice)
 ).toFixed(2)
+
 
   const orderCreate = useSelector((state) => state.orderCreate)
   const { order, success, error } = orderCreate
